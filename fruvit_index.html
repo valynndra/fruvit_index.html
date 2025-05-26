@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FRUVIT</title>
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; }
+    header { background-color: #ff66b2; padding: 1.5em; text-align: center; color: white; font-size: 2em; }
+    nav { display: flex; justify-content: center; gap: 20px; background-color: #ffaad4; padding: 1em; }
+    nav a { color: white; font-weight: bold; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    section { padding: 2em; display: none; }
+    .active { display: block; }
+
+    /* Frutales */
+    #frutales { background: linear-gradient(to right, #ffc1e3, #f7a9ff, #ffb877); color: #5c005c; }
+    .batido-card { background: white; border-radius: 10px; padding: 1em; margin-bottom: 1em; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+
+    /* Nutritivos */
+    #nutritivos { background: linear-gradient(to right, #b3e5fc, #dcedc8); color: #004d80; }
+
+    /* Contacto */
+    #contacto { background: linear-gradient(to bottom, #e0ffff, #7fffd4); color: black; font-family: 'Georgia', serif; text-align: center; font-size: 1.2em; }
+
+    /* Encuentranos */
+    #encuentranos { background: #2c2c2c; color: #d2b48c; padding: 3em; text-align: center; font-size: 1.5em; }
+  </style>
+</head>
+<body>
+  <header>FRUVIT</header>
+  <nav>
+    <a href="#" onclick="mostrar('frutales')">Batidos Frutales</a>
+    <a href="#" onclick="mostrar('nutritivos')">Batidos Nutritivos</a>
+    <a href="#" onclick="mostrar('contacto')">Contáctanos</a>
+    <a href="#" onclick="mostrar('encuentranos')">Encuéntranos</a>
+  </nav>
+
+  <section id="frutales" class="active">
+    <h2>Batidos Frutales</h2>
+    <div class="batido-card"><strong>Batido Morango:</strong> Mora, mango y limón</div>
+    <div class="batido-card"><strong>Batido Tropical:</strong> Piña, mango y banano</div>
+    <div class="batido-card"><strong>Batido Carnaval:</strong> Banano, papaya y naranja</div>
+    <div class="batido-card"><strong>Batido Explosión Amarilla:</strong> Mango, maracuyá y limón</div>
+    <div class="batido-card"><strong>Batido Refrescante:</strong> Sandía, fresa y limón</div>
+    <div class="batido-card"><strong>Batido Primaveral:</strong> Manzana, banano y naranja</div>
+  </section>
+
+  <section id="nutritivos">
+    <h2>Batidos Nutritivos</h2>
+    <div class="batido-card"><strong>Batido Jengibrico:</strong> Jengibre, naranja, miel y limón. Aporta vitaminas A y C</div>
+    <div class="batido-card"><strong>Batido Proteinico:</strong> Naranja, banano y proteína de soya. Reduce colesterol y sube potasio</div>
+    <div class="batido-card"><strong>Batido Verde:</strong> Piña, apio, pepino, perejil y naranja. Beneficios diuréticos</div>
+    <div class="batido-card"><strong>Batido Mágico:</strong> Blueberries, fresas y crema de coco. Vitamina A</div>
+    <div class="batido-card"><strong>Batido Mix de Ensueño:</strong> Mora, blueberries, arándanos y fresa. Aportan vitamina C, D y calcio</div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <p>Para más información, contáctanos al número telefónico <strong>3052373270</strong> / <strong>3217846295</strong></p>
+    <p>O al correo: <strong>fruvitsa@gmail.com</strong></p>
+  </section>
+
+  <section id="encuentranos">
+    <h2>Estamos ubicados:</h2>
+    <p>Al frente de la barbería de Cocomusic, en la carrera 77 #83-51</p>
+  </section>
+
+  <script>
+    function mostrar(id) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    // Desactivar la página después del 27/05/2025
+    const fechaActual = new Date();
+    const fechaLimite = new Date("2025-05-28T00:00:00");
+    if (fechaActual >= fechaLimite) {
+      document.body.innerHTML = '<div style="text-align:center; padding:5em; font-size:2em;">Esta página ya no está disponible.</div>';
+    }
+  </script>
+</body>
+</html>
